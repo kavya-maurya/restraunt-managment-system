@@ -12,3 +12,4 @@ F:\Project 1\obj\Debug\net9.0\refint\Project 1.dll
 F:\Project 1\obj\Debug\net9.0\Project 1.pdb
 F:\Project 1\obj\Debug\net9.0\Project 1.genruntimeconfig.cache
 F:\Project 1\obj\Debug\net9.0\ref\Project 1.dll
+F:\Project 1\obj\Debug\net9.0\Project 1.sourcelink.json

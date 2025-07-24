@@ -70,9 +70,11 @@ obj.Menu();
                     Console.Write("your total is : ");
                     obj.Bill();
 
-             // int o = obj.Bill.ToString();
-                
-                      await SendNtfyNotification("order" , $"order confirmed!\n your order will be served soon \n your total is  " );
+int total = obj.Bill();
+string filePath = "Bill.pdf";
+File.AppendAllText(filePath, $"\n ₹{total}");
+          
+                      await SendNtfyNotification("order" , $"order confirmed!\n your order will be served soon \n your total is {total} " );
 
                     a=2 ;
 
@@ -134,7 +136,7 @@ abstract class Restaurant
     public abstract void Menu ();
     
 
-    public abstract void Bill();
+    public abstract int Bill();
     public abstract void AddItem();
     public abstract void ShowMenu();
     public abstract void order();
@@ -320,7 +322,7 @@ private List<MenuItem> OrderedItems = new List<MenuItem>();
          }
 
 
-          public override void Bill ()
+          public override int Bill ()
     {
          int total = 0;
         foreach (var ordered in OrderedItems)
@@ -333,7 +335,7 @@ private List<MenuItem> OrderedItems = new List<MenuItem>();
         
 
          Console.WriteLine($"₹{total}");
-         
+         return total;
        
        
     }
